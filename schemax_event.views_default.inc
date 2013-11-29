@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * date_repeat_entity_example.views_default.inc
+ * schemax_event.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function date_repeat_entity_example_views_default_views() {
+function schemax_event_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'date_repeat_entity_example_calendar';
+  $view->name = 'schemax_event_calendar';
   $view->description = 'Provides calendar views for year, month, week, day and iCal';
   $view->tag = 'calendar';
   $view->base_table = 'node';
@@ -356,7 +356,7 @@ function date_repeat_entity_example_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_date.field_date_value' => 'field_data_field_date.field_date_value',
   );
-  $export['date_repeat_entity_example_calendar'] = $view;
+  $export['schemax_event_calendar'] = $view;
 
   return $export;
 }

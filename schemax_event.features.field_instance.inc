@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * date_repeat_entity_example.features.field_instance.inc
+ * schemax_event.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function date_repeat_entity_example_field_default_field_instances() {
+function schemax_event_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event-body'
-  $field_instances['node-event-body'] = array(
-    'bundle' => 'event',
+  // Exported field_instance: 'node-schemax_event-body'
+  $field_instances['node-schemax_event-body'] = array(
+    'bundle' => 'schemax_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -62,9 +62,9 @@ function date_repeat_entity_example_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_clone_state'
-  $field_instances['node-event-field_clone_state'] = array(
-    'bundle' => 'event',
+  // Exported field_instance: 'node-schemax_event-field_clone_state'
+  $field_instances['node-schemax_event-field_clone_state'] = array(
+    'bundle' => 'schemax_event',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -104,9 +104,9 @@ function date_repeat_entity_example_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date'
-  $field_instances['node-event-field_date'] = array(
-    'bundle' => 'event',
+  // Exported field_instance: 'node-schemax_event-field_date'
+  $field_instances['node-schemax_event-field_date'] = array(
+    'bundle' => 'schemax_event',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -174,9 +174,9 @@ function date_repeat_entity_example_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_master_uuid'
-  $field_instances['node-event-field_master_uuid'] = array(
-    'bundle' => 'event',
+  // Exported field_instance: 'node-schemax_event-field_master_uuid'
+  $field_instances['node-schemax_event-field_master_uuid'] = array(
+    'bundle' => 'schemax_event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
