@@ -42,10 +42,3 @@ features[variable][] = node_options_schemax_event
 features[variable][] = node_preview_schemax_event
 features[variable][] = node_submitted_schemax_event
 features[views_view][] = schemax_event_calendar
-
-
-; Information added by drush on 2013-11-28
-version = "master-dev"
-project = "date_repeat_entity"
-datestamp = "1385627346"
-
