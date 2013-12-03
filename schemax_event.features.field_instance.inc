@@ -58,7 +58,7 @@ function schemax_event_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -100,7 +100,7 @@ function schemax_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -209,7 +209,56 @@ function schemax_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-schemax_event-field_schemax_location_reference'
+  $field_instances['node-schemax_event-field_schemax_location_reference'] = array(
+    'bundle' => 'schemax_event',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_schemax_location_reference',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'delete_references' => 0,
+          'match_operator' => 'CONTAINS',
+        ),
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -218,9 +267,8 @@ function schemax_event_field_default_field_instances() {
   t('Body');
   t('Clone state');
   t('Date');
+  t('Location');
   t('Master UUID');
-  t('Repeating event start date');
-  t('This is the date that a repeating date starts on.');
 
   return $field_instances;
 }
