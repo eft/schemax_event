@@ -1,4 +1,4 @@
-name = Event
+name = Schemax Event
 description = Views and content types associated with events and calendars
 core = 7.x
 package = Schemax
