@@ -86,6 +86,9 @@ function schemax_event_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'featured_content' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
