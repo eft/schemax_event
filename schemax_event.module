@@ -1,7 +1,26 @@
 <?php
+
 /**
  * @file
  * Code for the schemax_event feature.
  */
-
 include_once 'schemax_event.features.inc';
+
+/**
+ * Implements hook_repeating_date_update().
+ *
+ * Used to update a date instance in a date series.
+ *
+ * @param object $date_entity
+ *   An instance of a date entity in a series.
+ * @param object $updated_entity
+ *   The updated entity.
+ */
+function schemax_event_repeating_date_update($date_entity, $updated_entity, $entity_type = 'node') {
+
+  $date_entity_wrapper = entity_metadata_wrapper($entity_type, $date_entity);
+  $updated_entity_wrapper = entity_metadata_wrapper($entity_type, $updated_entity);
+
+  // Update date entity title from updated entity.
+  $date_entity_wrapper->field_schemax_location_reference = $updated_entity_wrapper->field_schemax_location_reference;
+}
