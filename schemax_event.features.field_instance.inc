@@ -10,8 +10,8 @@
 function schemax_event_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-schemax_event-field_clone_state'
-  $field_instances['node-schemax_event-field_clone_state'] = array(
+  // Exported field_instance: 'node-schemax_event-date_repeat_entity_clone_state'
+  $field_instances['node-schemax_event-date_repeat_entity_clone_state'] = array(
     'bundle' => 'schemax_event',
     'default_value' => array(
       0 => array(
@@ -25,7 +25,7 @@ function schemax_event_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 7,
       ),
       'featured_content' => array(
         'label' => 'above',
@@ -41,10 +41,15 @@ function schemax_event_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_clone_state',
-    'label' => 'Clone state',
-    'required' => 0,
+    'field_name' => 'date_repeat_entity_clone_state',
+    'label' => 'Clone state (do not change)',
+    'required' => FALSE,
     'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -54,7 +59,51 @@ function schemax_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 4,
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'node-schemax_event-date_repeat_entity_master_uuid'
+  $field_instances['node-schemax_event-date_repeat_entity_master_uuid'] = array(
+    'bundle' => 'schemax_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'featured_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'date_repeat_entity_master_uuid',
+    'label' => 'Master UUID (do not change)',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 32,
     ),
   );
 
@@ -131,51 +180,6 @@ function schemax_event_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-schemax_event-field_master_uuid'
-  $field_instances['node-schemax_event-field_master_uuid'] = array(
-    'bundle' => 'schemax_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_master_uuid',
-    'label' => 'Master UUID',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
     ),
   );
 
@@ -301,11 +305,11 @@ function schemax_event_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Clone state');
+  t('Clone state (do not change)');
   t('Date');
   t('Groups audience');
   t('Location');
-  t('Master UUID');
+  t('Master UUID (do not change)');
 
   return $field_instances;
 }

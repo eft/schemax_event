@@ -62,6 +62,21 @@ function schemax_event_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_repeat_entity_bundles_available';
+  $strongarm->value = array(
+    'schemax_event' => 'schemax_event',
+    'article' => 0,
+    'page' => 0,
+    'schemax_location' => 0,
+    'schemax_news' => 0,
+    'schemax_person' => 0,
+    'schemax_team' => 0,
+  );
+  $export['date_repeat_entity_bundles_available'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__schemax_event';
   $strongarm->value = array(
     'view_modes' => array(
