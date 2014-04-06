@@ -104,6 +104,9 @@ function schemax_event_strongarm() {
       'featured_content' => array(
         'custom_settings' => TRUE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -111,7 +114,7 @@ function schemax_event_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '4',
         ),
       ),
       'display' => array(),

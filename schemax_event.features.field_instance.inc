@@ -59,7 +59,7 @@ function schemax_event_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 33,
+      'weight' => 7,
     ),
   );
 
@@ -103,7 +103,7 @@ function schemax_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 6,
     ),
   );
 
@@ -179,6 +179,54 @@ function schemax_event_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-schemax_event-field_schemax_event_type'
+  $field_instances['node-schemax_event-field_schemax_event_type'] = array(
+    'bundle' => 'schemax_event',
+    'default_value' => array(
+      0 => array(
+        'tid' => 25,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'featured_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_schemax_event_type',
+    'label' => 'Type',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 1,
     ),
   );
@@ -234,7 +282,7 @@ function schemax_event_field_default_field_instances() {
         ),
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -313,7 +361,7 @@ function schemax_event_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 31,
+      'weight' => 5,
     ),
   );
 
@@ -324,6 +372,7 @@ function schemax_event_field_default_field_instances() {
   t('Groups audience');
   t('Location');
   t('Master UUID (do not change)');
+  t('Type');
 
   return $field_instances;
 }
