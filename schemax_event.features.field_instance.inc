@@ -117,6 +117,8 @@ function schemax_event_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -137,6 +139,8 @@ function schemax_event_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -197,7 +201,10 @@ function schemax_event_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 8,
       ),
@@ -242,6 +249,8 @@ function schemax_event_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => 'TBD',
+          'empty_fields_handler' => 'EmptyFieldText',
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -297,7 +306,10 @@ function schemax_event_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'og_ui',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'og_list_default',
         'weight' => 5,
       ),

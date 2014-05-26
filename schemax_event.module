@@ -22,5 +22,56 @@ function schemax_event_repeating_date_update($date_entity, $updated_entity, $ent
   $updated_entity_wrapper = entity_metadata_wrapper($entity_type, $updated_entity);
 
   // Update field(s) from updated entity.
-  $date_entity_wrapper->field_schemax_location_reference = $updated_entity_wrapper->field_schemax_location_reference;
+  $date_entity_wrapper->field_schemax_location_reference = $updated_entity_wrapper->field_schemax_location_reference->value();
+}
+
+/**
+ * Replicate entities that are the target of entity_reference fields
+ *
+ * Implements hook_replicate_field_FIELD_TYPE
+ *
+ * For entites that have a repeating date field and one or more entity
+ * reference fields we need to replicate the referenced entities as well
+ * so the cloned parents don't all point to the same children.  We also need
+ * to update the entity_reference fields to point to them.
+ *
+ * @param object $replica
+ *   Reference to the fully loaded entity object being saved (the clone) that
+ *   can be altered as needed.
+ * @param string $entity_type
+ *   Type of the entity containing the field.
+ * @param string $field_name
+ *   Name of the field that is going to be processed.
+ *
+ * @see replicate_clone_entity()
+ */
+//function schemax_event_replicate_field_entityreference(&$replica, $entity_type, $field_name) {
+//
+//  // Only replicate event participant fields
+//  if ($field_name == 'field_event_participant') {
+//
+//    // Wrap the replicated entity.
+//    $wrapper = entity_metadata_wrapper($entity_type, $replica);
+//
+//    // Loop over the field values
+//    foreach ($wrapper->$field_name as $delta => $referenced_field_item_wrapper) {
+//      $referenced_entity = $referenced_field_item_wrapper->value();
+//
+//      // Replicate the referenced entity and get the new id
+//      $replicated_referenced_entity_id = replicate_entity('node', $referenced_entity);
+//
+//      // Give the replica reference field the new target id
+//      $replica->{$field_name}[LANGUAGE_NONE][$delta]['target_id'] = $replicated_referenced_entity_id;
+//    }
+//  }
+//}
+
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function schemax_event_preprocess_field(&$vars) {
+  if ($vars['element']['#field_name'] == 'field_image' && $vars['element']['#bundle'] == 'fieldable_panels_pane' && $vars['element']['#view_mode'] == 'featured_content') {
+    $vars['classes_array'][] = 'fpp_featured_content';
+  }
 }
