@@ -797,6 +797,7 @@ function schemax_event_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_date.field_date_value' => 'field_data_field_date.field_date_value',
   );
@@ -929,11 +930,10 @@ function schemax_event_views_default_views() {
     'empty_fields_emptyfieldtext_empty_text' => '',
   );
   $handler->display->display_options['fields']['field_schemax_location_reference']['field_api_classes'] = TRUE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Date - end date (field_date:value2) */
+  $handler->display->display_options['sorts']['field_date_value2']['id'] = 'field_date_value2';
+  $handler->display->display_options['sorts']['field_date_value2']['table'] = 'field_data_field_date';
+  $handler->display->display_options['sorts']['field_date_value2']['field'] = 'field_date_value2';
   /* Contextual filter: Content: Location (field_schemax_location_reference) */
   $handler->display->display_options['arguments']['field_schemax_location_reference_target_id']['id'] = 'field_schemax_location_reference_target_id';
   $handler->display->display_options['arguments']['field_schemax_location_reference_target_id']['table'] = 'field_data_field_schemax_location_reference';
